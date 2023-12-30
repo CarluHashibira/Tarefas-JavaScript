@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Adivinhe o número sorteado</title>
+</head>
+<body>
+	<h1>Adivinhe o número sorteado</h1>
+	<script type="text/javascript">
+		var pc = Math.floor(Math.random()*11);
+		var jg = parseInt(prompt('Digite um número de 1 a 10',''));
+
+		if (pc == jg) {
+			document.write('<h3>Parabéns!!!</h3>');
+			document.write('<p>O número sorteado foi: ' + pc + '</p>');
+		}else{
+			document.write('<h3>Você errou...</h3>');
+			document.write('<p>O número sorteado foi: ' + pc + '</p>');
+		}
+	</script>
+</body>
+</html>

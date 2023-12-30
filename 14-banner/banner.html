@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Banner</title>
+	<style type="text/css">
+		body{
+			font-family: Arial, sans-serif;
+		}
+		#banner{
+			text-align: center;
+			width: 1000px;
+			height: 380px;
+			margin: 0px auto;
+		}
+		#banner #botoes a:link,
+		#banner #botoes a:visited{
+			border: solid 1px #333;
+			padding: 5px 10px;
+			border-radius: 50%;
+			text-decoration: none;
+			color: #000;
+		}
+		#banner #botoes a:hover,
+		#banner #botoes a:active,
+		#banner #botoes a.hover{
+			background-color: #333;
+			color: #FFF;
+		}
+		#banner #botoes{
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		var img = new Array('1','2','3','4');
+		var indice = 0;
+
+		function mudaImg(i){
+			if (i == 0 || i == 1 || i == 2 || i == 3) {
+				indice = i;
+			}
+			else if(indice == img.length -1){
+				indice = 0;
+			}
+			else{
+				indice++;
+			}
+		
+
+			document.getElementById('b1').setAttribute('class','');
+			document.getElementById('b2').setAttribute('class','');
+			document.getElementById('b3').setAttribute('class','');
+			document.getElementById('b4').setAttribute('class','');
+			document.getElementById('b'+img[indice]).setAttribute('class','hover');
+			document.getElementById('banner_img').innerHTML = '<img src="img/banner'+img[indice] + '.jpg" alt="Banner" title="Banner" width="1000" height="250">';
+		}
+
+		setInterval('mudaImg()', 3000);
+	</script>
+</head>
+<body>
+	<div id="banner">
+		<h1>Banner automático com navegação em Javascript</h1>
+		<div id="banner_img">
+			<img src="img/banner1.jpg" 
+			     width="1000" height="250"
+			     alt="Banner" title="Banner">
+		</div>
+		<div id="botoes">
+			<a href="#" id="b1" onclick="mudaImg('0')" class="hover">1</a>
+			<a href="#" id="b2" onclick="mudaImg('1')">2</a>
+			<a href="#" id="b3" onclick="mudaImg('2')">3</a>
+			<a href="#" id="b4" onclick="mudaImg('3')">4</a>
+		</div>
+	</div>
+</body>
+</html>

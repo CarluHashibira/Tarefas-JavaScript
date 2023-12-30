@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de break</title>
+</head>
+<body>
+	<h1>Exemplo de break</h1>
+	<p id="teste"></p>
+
+	<script type="text/javascript">
+		var resp = '';
+		for (var i = 0; i <= 10; i++) {
+			if (i == 3) {
+				break;
+			}
+			resp += 'Valor da variável é: ' + i + '<br>';
+		}
+		document.getElementById('teste').innerHTML = resp;
+	</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de jQuery</title>
+	<style type="text/css">
+		body{
+			font-family: Arial, sans-serif;
+			background-color: #DDD;
+		}
+		#formulario{
+			width: 400px;
+			height: 360px;
+			background-color: #EEE;
+			margin: 0px auto;
+			padding: 20px;
+		}
+		h1{
+			text-align: center;
+		}
+		form{
+			position: relative;
+		}
+		input[type=text],
+		input[type=email],
+		textarea{
+			width: 95%;
+			padding: 8px;
+			border-radius: 8px;
+		}
+		textarea{
+			resize: none;
+		}
+		input[type=button]{
+			padding: 10px;
+			border-radius: 8px;
+		}
+		.erro, .erro2{
+			font-size: 16px;
+			color: #F00;
+			position: relative;
+			left: 130px;
+			top: -25px;
+		}
+		.erro2{
+			top: -95px;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//Limpar as mensagens de erro ao digitar
+			$('#nome, #email, #mensagem').keydown(function(){
+				$('.erro').text('');
+				$('.erro2').text('');
+			});
+			//Ao clicar no botão salvar, obtemos os campos
+			$('#salvar').click(function(){
+				var nome = $('#nome');
+				var email = $('#email');
+				var mensagem = $('#mensagem');
+
+				//Verifica se os três campos estão vazios
+				if (!nome.val() &&
+					!email.val() &&
+					!mensagem.val()) {
+					nome.focus();
+					$('#erroNome').text('Campo obrigatório');
+				}
+				//Verifica se o nome está vazio
+				else if(!nome.val()){
+					nome.focus();
+					$('#erroNome').text('Campo obrigatório');
+				}
+				//Verifica se o email está vazio
+				else if(!email.val()){
+					email.focus();
+					$('#erroEmail').text('Campo obrigatório');
+				}
+				//Verifica se a mensagem está vazia
+				else if(!mensagem.val()){
+					mensagem.focus();
+					$('#erroMensagem').text('Campo obrigatório');
+				}
+				//Valida os dados
+				else{
+					$('#nome').after('',null);
+					$('#email').after('',null);
+					$('#mensagem').after('',null);
+					$('#form1').submit();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Faça seu cadastro</h1>
+	<div id="formulario">
+		<form name="form1" id="form1" method="post" action="">
+			<label for="nome">Nome:</label>
+			<input type="text" name="nome" id="nome"><br> 
+			<span class="erro" id="erroNome"></span><br> 
+
+			<label for="email">E-mail:</label>
+			<input type="email" name="email" id="email"><br> 
+			<span class="erro" id="erroEmail"></span><br>
+
+			<label for="mensagem">Mensagem:</label>
+			<textarea name="mensagem" id="mensagem"
+			          rows="8"></textarea><br> 
+			<span class="erro2" id="erroMensagem"></span><br> 
+
+			<input type="button" name="salvar" id="salvar" 
+			       value="Salvar">
+		</form>
+	</div>
+</body>
+</html>

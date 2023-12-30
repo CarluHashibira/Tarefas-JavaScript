@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de laço de repetição</title>
+</head>
+<body>
+	<h1>Exemplo de laço de repetição</h1>
+	<p>Mostrar uma imagem para os múltiplos de 4</p>
+
+	<script type="text/javascript">
+		 for (var i = 1; i <= 20; i++) {
+		 	if (i % 4 == 0) {
+		 		document.write('<img src="../imagens/pin.jpg" alt="Pin" title="Pin"><br>');
+		 		continue;
+		 	}
+		 	document.write(i + '<br>');
+		 }
+	</script>
+</body>
+</html>

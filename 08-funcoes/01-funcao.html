@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de função</title>
+</head>
+<body>
+	<h1>Exemplo de função</h1>
+	<p id="teste"></p>
+
+	<script type="text/javascript">
+		function mostraTexto(){
+			var texto = 'Senac Vila Prudente <br>';
+			var media = (2+5+8)/3 + '<br>';
+			var resp = true;
+
+			document.getElementById('teste').innerHTML = texto + media + resp;
+		}
+	</script>
+	<button type="button" onclick="mostraTexto();">
+		Mostra
+	</button>
+</body>
+</html>

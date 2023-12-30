@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>Exemplo de vetor</h1>
+	<p id="teste"></p>
+	<script type="text/javascript">
+		var cores, resultado, fim, cont;
+		cores = ['Verde', 'Amarelo', 'Azul', 'Branco'];
+		fim = cores.length;
+
+		resultado = '<ul>';
+		for(cont = 0; cont < fim; cont++){
+			resultado += '<li>' + cores[cont] + '</li>';
+		}
+		resultado += '</ul>';
+
+		document.getElementById('teste').innerHTML = resultado;
+	</script>
+
+</body>
+</html>

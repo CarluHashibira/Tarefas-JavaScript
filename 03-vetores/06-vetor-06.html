@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>Exemplo de vetor - join</h1>
+	<h3>Unindo o conteúdo de vetores com ou sem string</h3>
+	<p id="teste1">Sem separador: </p>
+	<p id="teste2">Com separador: </p>
+
+	<script type="text/javascript">
+		var vetor = [1,2,3,4,5,6];
+		var resultado1 = vetor.join();
+		var resultado2 = vetor.join('-');
+
+		document.getElementById('teste1').innerHTML += resultado1;
+		document.getElementById('teste2').innerHTML += resultado2;
+	</script>
+
+</body>
+</html>

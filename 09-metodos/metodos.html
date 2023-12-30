@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de métodos</title>
+</head>
+<body>
+	<h1>Exemplo de métodos</h1>
+	<script type="text/javascript">
+		//Math.abs() - Retorna o valor absoluto de um número 
+		var num = -10;
+
+		document.write('Math.abs(num): ' + Math.abs(num) + '<br>');
+
+		//Math.floor() - Arredonda um número para baixo
+		num  = 10.80;
+
+		document.write('Math.floor(num): ' + Math.floor(num) + '<br>');
+
+		//Math.ceil() - Arredonda um número para cima
+		num = 10.80;
+
+		document.write('Math.ceil(num): ' + Math.ceil(num) + '<br>');
+
+		//Math.round() - Arredonda um número para o mais próximo
+		num = 10.50;
+
+		document.write('Math.round(num): ' + Math.round(num) + '<br>');
+
+		//concat() - Concatena strigs
+		var texto1 = 'Senac ';
+		var texto2 = 'Vila Prudente';
+		var resp = texto1.concat(texto2);
+
+		document.write('texto1.concat(texto2): ' + resp + '<br>');
+
+		//Data completa
+		var agora = new Date();
+
+		//getDay - Array que retorna o dia da semana (0 à 6)
+		var diaSemana = agora.getDay();
+		var dias = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
+
+		//getDate() - Retorna o dia do mes
+		var diadoMes = agora.getDate();
+
+		//getMonth() - Retorna o mês (0 à 11)
+		var mes = agora.getMonth();
+		var meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+
+		//getFullYear() - Retorna o ano completo
+		var ano = agora.getFullYear();
+
+		//Mostrando a data
+		document.write('Data completa: ' + dias[diaSemana] + ', ' + diadoMes + ' de ' + meses[mes] + ' de ' + ano + '<br>');
+
+		//Relógio digital
+		//getHours() - retorna a hora
+		var hora = agora.getHours();
+
+		//getMinutes() - Retorna os minutos
+		var minutos = agora.getMinutes();
+
+		//getSeconds() - Retorna os segundos
+		var segundos = agora.getSeconds();
+
+		//Concatenar as variáveis com os ':'
+		document.write(hora + ':' + minutos + ':' + segundos + '<br>');
+
+		//Number.isNaN() - Determina se o valor passado é NaN e seu tipo é Number 
+		num = '10';
+		document.write('Number.isNaN(num): ' + Number.isNaN(num) + '<br>')
+
+		//join() - Une conteúdo de um array com um ou sem separador
+		var cores = ['Verde', 'Amarelo', 'Azul', 'Branco'];
+		document.write('cores.join():' + cores.join() + '<br>');
+		document.write('cores.join(\'-\'):' + cores.join('-') + '<br>');
+
+		//parseInt() - Transforma string em inteiro
+		var num1 = '10';
+		var num2 = 5;
+		document.write('parseInt(num1) + num2: ' + (parseInt(num1) + num2) + '<br>');
+
+		//parseFloat() - Determina se o primeiro caractere na cadeia especificada é um número, se for, analisa a sequência atè chegar ao final do número e retorna o número como um número, não como uma sequência
+		var num1 = '10.645';
+		var num2 = '0.1';
+		var num3 = parseFloat('10.15');
+		var num4 = parseFloat('35 45 55');
+		var num5 = parseFloat('   80   ');
+		var num6 = parseFloat('50 anos');
+		var num7 = parseFloat('Temos 50');
+
+		document.write(parseFloat(num1) + parseFloat(num2) + '<br>');
+		document.write(num3 + '<br>');
+		document.write(num4 + '<br>');
+		document.write(num5 + '<br>');
+		document.write(num6 + '<br>');
+		document.write(num7 + '<br>');
+
+		//Math.random() - Retorna um número aleatório de ponto flutuante entre 0 e 1
+		document.write('Math.random(): ' + Math.random() + '<br>');
+
+		//Gerando números entre 1 e 10
+		document.write('Math.floor((Math.random()*10 + 1)): ' + Math.floor((Math.random()*10 + 1)) + '<br>')
+
+		//Replace - Procura em uma string um valor específico e substitui por outro
+		var texto = 'Senac VPR';
+		document.write('texto.replace(\'VPR\', \'Vila Prudente\'): ' + texto.replace('VPR', 'Vila Prudente') + '<br>');
+
+		//reverse() - Inverte o conteúdo de um vetor
+		var cores = ['Verde', 'Amarelo', 'Azul', 'Branco'];
+		document.write('cores.reverse(): ' + cores.reverse() + '<br>');
+
+		//toFixed() - Define casas decimais
+		var valor = 10.4553;
+		document.write('valor.toFixed(2): ' + valor.toFixed(2) + '<br>');
+
+		//sort() - Classifica os itens de uma matriz em ordem alfabética
+		var nomes = ['Numsei', 'Dois', 'Fome', 'Comida', 'Dúvida'];
+		document.write('nomes.sort(): ' + nomes.sort() + '<br>'); 
+
+		//Math.srqt() - Retorna a raíz quadrada 
+		var numero = 9;
+		document.write('Math.sqrt(numero): ' + Math.sqrt(numero) + '<br>');
+
+		//substring() - Extrai os caracteres de ums string 
+		var fruta = 'Banana';
+		var texto = 'Paralelepípedo';
+		document.write('fruta.substring(3): ' + fruta.substring(3) + '<br>');
+		document.write('texto.substring(4, 8): ' + texto.substring(4, 8) + '<br>');
+
+		//toLowerCase() - Converte uma string para minúscula
+		document.write('fruta.toLowerCase(): ' + fruta.toLowerCase() + '<br>');
+
+		//toUpperCase() - Converte uma string para maíuscula
+		document.write('fruta.toUpperCase(): ' + fruta.toUpperCase() + '<br>');
+
+		//trim() - Remove os espaços de uma string (antes da primeira palavra e dps da última)
+		var inicio = ' Senac';
+		var fim = 'Senac ';
+		document.write('inicio.trim() + fim.trim():' + inicio.trim() + fim.trim() + '<br>');
+
+		//unshift() - Adiciona novos itens no início de um vetor
+		cores.unshift('Preto');
+		document.write('cores.unshift(\'Preto\'): ' + cores + '<br>');
+
+		//push() - Adiciona novos itens no fim de um vetor
+		cores.push('Vermelho');
+		document.write('cores.unshift(\'Vermelho\'): ' + cores + '<br>');
+	</script>
+
+</body>
+</html>

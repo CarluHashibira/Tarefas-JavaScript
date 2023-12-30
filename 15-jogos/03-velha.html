@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jogo da velha</title>
+	<style type="text/css">
+		body{
+			font-family: Arial, sans-serif;
+		}
+		div{
+			width: 300px;
+			height: 450px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -225px;
+			margin-left: -150px;
+			text-align: center;
+		}
+		td{
+			width: 100px;
+			height: 100px;
+			background-color: #9CF;
+			font-size: 60px;
+			cursor: pointer;
+		}
+		input{
+			padding: 15px;
+			width: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+		var letra = 'X';
+		//Função para criar as marcações
+		function Joga(celula){
+			celulaClicada = document.getElementById(celula).innerHTML;
+			//Se a celulaClicada já foi clicada
+			if (celulaClicada == 'X' || 
+				celulaClicada == 'O') {
+				alert('Esta célula já foi escolhida');
+			}else{
+				document.getElementById(celula).innerHTML = letra;
+				if (letra == 'X') {
+					letra = 'O';
+				}else{
+					letra = 'X';
+				}
+			}
+		}
+
+
+		//Função para verificar as regras do jogo
+		function Verifica(){
+			c11 = document.getElementById('cel11').innerHTML;
+			c12 = document.getElementById('cel12').innerHTML;
+			c13 = document.getElementById('cel13').innerHTML;
+
+			c21 = document.getElementById('cel21').innerHTML;
+			c22 = document.getElementById('cel22').innerHTML;
+			c23 = document.getElementById('cel23').innerHTML;
+
+			c31 = document.getElementById('cel31').innerHTML;
+			c32 = document.getElementById('cel32').innerHTML;
+			c33 = document.getElementById('cel33').innerHTML;
+
+			if (((c11 != '') && (c12 != '') && (c13 != '') && (c11 == c12) && (c12 == c13)) || 
+		    ((c11 != '') && (c22 != '') && (c33 != '') && (c11 == c22) && (c22 == c33)) || 
+		    ((c11 != '') && (c21 != '') && (c31 != '') && (c11 == c21) && (c21 == c31)) || 
+		    ((c21 != '') && (c22 != '') && (c23 != '') && (c21 == c22) && (c22 == c23)) || 
+		    ((c31 != '') && (c32 != '') && (c33 != '') && (c31 == c32) && (c32 == c33)) || 
+		    ((c12 != '') && (c22 != '') && (c32 != '') && (c12 == c22) && (c22 == c32)) || 
+		    ((c13 != '') && (c23 != '') && (c33 != '') && (c13 == c23) && (c23 == c33)) || 
+		    ((c13 != '') && (c22 != '') && (c31 != '') && (c13 == c22) && (c22 == c31))){
+				if (letra == 'X') {
+					letra = 'O';
+				}else{
+					letra = 'X';
+				}
+				alert('O jogador ' + letra + ' ganhou!');
+				Novo();
+		    }
+		}
+
+
+		//Função para reiniciar o jogo
+		function Novo(){
+			//Variável 'l' de linha
+			for (var l = 1; l <= 3; l++) {
+				//Variável 'c' de coluna
+				for (var c = 1; c <= 3; c++) {
+					var nomeColuna = 'cel' + l + c;
+					document.getElementById(nomeColuna).innerHTML = '';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<h1>Jogo da velha</h1>
+		<table>
+			<tr>
+				<td id="cel11" onclick="Joga(this.id); Verifica()"></td>
+				<td id="cel12" onclick="Joga(this.id); Verifica()"></td>
+				<td id="cel13" onclick="Joga(this.id); Verifica()"></td>
+			</tr>
+			<tr>
+				<td id="cel21" onclick="Joga(this.id); Verifica()"></td>
+				<td id="cel22" onclick="Joga(this.id); Verifica()"></td>
+				<td id="cel23" onclick="Joga(this.id); Verifica()"></td>
+			</tr>
+			<tr>
+				<td id="cel31" onclick="Joga(this.id); Verifica()"></td>
+				<td id="cel32" onclick="Joga(this.id); Verifica()"></td>
+				<td id="cel33" onclick="Joga(this.id); Verifica()"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="button" name="limpar" 
+		       value="Novo jogo" 
+		       onclick="Novo();">
+	</div>
+</body>
+</html>

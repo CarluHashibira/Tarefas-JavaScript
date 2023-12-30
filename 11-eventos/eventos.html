@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de eventos</title>
+</head>
+<body>
+	<h1>Exemplo de eventos</h1>
+	<h3>Evento onclick</h3>
+	<p id="teste"></p>
+	<button type="button" 
+	        onclick="document.getElementById('teste').innerHTML = Date();">
+		Que horas são?
+	</button>
+
+	<h3>Evento onchange</h3>
+	<label>Mude o texto e clique fora</label><br>
+	<input type="text" name="nome" value="Senac" 
+	       onchange="alert('Você alterou o texto');">
+
+	<h3>Evento onmouseover</h3>
+	<p>Passe o mouse sobre o link</p>
+	<p>
+		<a href="#"
+		   onmouseover="alert('Você passou o mouse');">
+		   Este é o link
+		</a>
+	</p>
+
+	<h3>Evento onmouseout</h3>
+	<p>Passe o mouse sobre o link e tire o mouse</p>
+	<p>
+		<a href="#"
+		   onmouseout="alert('Você tirou o mouse');">
+		   Este é o link
+		</a>
+	</p>
+
+	<h3>Evento onkeydown</h3>
+	<label>Digite seu email</label><br> 
+	<input type="email" name="email"
+	       onkeydown="alert('Você pressionou uma letra');"><br> 
+
+	<h3>Evento onkeyup</h3>
+	<label>Digite seu nome</label><br> 
+	<input type="text" name="nome" id="nome" 
+	       onkeyup="Maiuscula()"><br>
+
+	<script type="text/javascript">
+		function Maiuscula(){
+			var c = document.getElementById('nome');
+			c.value = c.value.toUpperCase();
+		}
+	</script>
+</body>
+</html>

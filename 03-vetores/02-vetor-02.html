@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>Exemplo de vetor</h1>
+	<p id="teste1">Conteúdo do vetor 1: </p>
+	<p id="teste2">Conteúdo do vetor 2: </p>
+
+	<script type="text/javascript">
+		var pessoas1 = ['João', 'da Silva', '30'];
+		var pessoas2 = {Nome: 'João', 
+		                Sobrenome: 'da Silva', 
+		                Idade: 30};
+
+		document.getElementById('teste1').innerHTML += pessoas1;
+		document.getElementById('teste2').innerHTML += pessoas2['Nome'];
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Verifica input file</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function cricri(){
+			if ($('#file')[0].files.length == 0) {
+				alert('Selecione um arquivo');
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Verifica input file</h1>
+	<form name="form1" id="form1" method="post" enctype="multipart/form-data">
+		<label for="file">Selecione seu arquivo</label><br>
+		<input type="file" name="file" id="file">
+		<input type="submit" name="submit" id="submit" value="Enviar" onclick="cricri()">
+
+
+	</form>
+</body>
+</html>

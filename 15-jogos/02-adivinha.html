@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Adivinhe o número sorteado</title>
+</head>
+<body>
+	<h1>Adivinhe o número sorteado</h1>
+
+	<script type="text/javascript">
+		var pc = Math.floor(Math.random()*11);
+		var jg, tentativas = 0;
+
+		function Jogo(){
+			jg = prompt('Digite um número de 1 a 10','')
+			//Usuário cancela o jogo
+			if (jg == null) return false;
+
+			//Usuário não informou um número
+			if (parseInt(jg).toString() === 'NaN') {
+				alert('Digite apenas números');
+				Jogo();
+				return false;
+			}
+
+			//Incrementa as tentativas
+			tentativas++;
+
+			//Usuário acertou
+			if (parseInt(jg) == pc) {
+				alert('Parabéns!, você acertou em ' + 
+					  tentativas + ' tentativa(s)!');
+				document.write('<h3>O número sorteado foi: ' + pc + '</h3>');
+			}
+			//Usuário digitou um número maior
+			else if(parseInt(jg) > pc){
+				alert('Errou... tente um número MENOR');
+				Jogo();
+			}
+			//Usuário digitou um número menor
+			else{
+				alert('Errou... tente um número MAIOR');
+				Jogo();
+			}
+		}
+		
+		Jogo();
+
+	</script>
+</body>
+</html>

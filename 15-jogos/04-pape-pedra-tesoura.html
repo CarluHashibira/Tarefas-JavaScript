@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Papel - Pedra - Tesoura</title>
+	<style type="text/css">
+		body{
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		button{
+			padding: 20px;
+			background-color: #9CF;
+			border: none;
+			cursor: pointer;
+			box-shadow: 2px 2px 2px #333;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function Joga(){
+			var opcoes = ['Papel', 'Pedra', 'Tesoura'];
+			var gameover = false;
+			var pontuacaoJogador = 0;
+			var pontuacaoComputador = 0;
+			var sorteio = 0;
+
+			do{
+				opcao = parseInt(prompt('Escolha sua jogada: (1 - papel) - (2 - pedra) - (3 - tesoura)' ));
+				if (opcao > 0 && opcao < 4) {
+					sorteio = Math.ceil(Math.random() * 3);
+					//alert('O computador jogou ' + sorteio);
+					alert('O computador jogou '+ opcoes[sorteio-1]);
+					if (opcao == sorteio) {
+						alert('A rodada empatou!');
+					}else if(
+						(opcao == 1 && sorteio == 2) ||
+						(opcao == 2 && sorteio == 3) ||
+						(opcao == 3 && sorteio == 1)
+						){
+						alert('Você ganhou!');
+						pontuacaoJogador++;
+					}else{
+						alert('O computador ganhou!');
+						gameover = true;
+					}
+				}else{
+					gameover = true;
+				}
+			}while(gameover == false);
+			alert('A sua pontuação foi: ' + pontuacaoJogador);
+		}
+	</script>
+</head>
+<body>
+	<p>
+		<img src="imagem.jpg" 
+             alt="Papel - Pedra - Tesoura"
+             title="Papel - Pedra - Tesoura">
+	</p>
+	<h1>Papel - Pedra - Tesoura</h1>
+	<button type="button"
+	        onclick="Joga();">
+		Jogar novamente
+	</button>
+</body>
+</html>

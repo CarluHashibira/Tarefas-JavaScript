@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de laço de repetição</title>
+</head>
+<body>
+	<h1>Exemplo de laço de repetição</h1>
+	<p>Limitando um laço de repetição</p>
+
+	<script type="text/javascript">
+		var num = 0;
+		num = parseInt(prompt('Digite um número de 1 a 250', ''));
+
+		for (var i = 1; i <= num ; i++) {
+			document.write(i + ' ');
+			if (i == 250) {
+				break;
+			}
+		}
+	</script>
+</body>
+</html>

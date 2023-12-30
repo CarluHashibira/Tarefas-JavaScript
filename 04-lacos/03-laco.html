@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de laço de repetição</title>
+</head>
+<body>
+	<h1>Exemplo de laço de repetição</h1>
+	<p>Impressão na ordem de digitação e ordem inversa</p>
+
+	<script type="text/javascript">
+		var num = 0;
+		var nome = '';
+		var nomes = [];
+
+		//Alimentando o vetor com a quantidade digitada
+		num = parseInt(prompt('Digite um número', ''));
+		for (var i = 0; i < num; i++) {
+			nome = prompt('Digite um nome', '');
+			nomes[i] = nome;
+		}
+
+		//Imprimindo na ordem de digitação
+		document.write('<b>Ordem de digitação</b><br>');
+		for (var i = 0; i < num; i++) {
+			document.write(nomes[i] + '<br>');
+		}
+
+		//Imprimindo na ordem inversa
+		document.write('<br><b>Ordem inversa</b><br>');
+		for (var i = num - 1; i >= 0; i--) {
+			document.write(nomes[i] + '<br>');
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Validação de formulário</title>
+</head>
+<body>
+	<h1>Validação de formulário</h1>
+	<form name="form1" id="form1" method="post" onsubmit="return validaForm(this);">
+		<label for="nome">Nome</label><br>
+		<input type="text" name="nome" id="nome"><br>
+
+		<label for="email">E-mail</label><br>
+		<input type="email" name="email" id="email"><br>
+
+		<label for="senha">Senha</label><br>
+		<input type="password" name="senha" id="senha"><br>
+
+		<label for="sexo">Sexo</label><br>
+		<input type="radio" name="sexo" id="sexom" value="Masculino"> Masculino
+		<input type="radio" name="sexo" id="sexof" value="Feminino"> Feminino
+		<input type="radio" name="sexo" id="sexoo" value="Outro"> Outro<br><br>
+
+		<label for="software">Software que conhece</label><br>
+		<input type="checkbox" name="sfot1" id="soft1" value="Sublime">Sublime <br>
+		<input type="checkbox" name="sfot2" id="soft2" value="Brackts">Brackts <br>
+		<input type="checkbox" name="sfot3" id="soft3" value="Dreamweaver">Dreamweaver <br><br>
+
+		<label for="navegador">Navegador que utiliza</label><br>
+		<select name="navegador">
+			<option value="Selecione">Selecione</option>
+			<option value="IE">Internet Explore</option>
+			<option value="Safari">Safari</option>
+			<option value="Firefox">Firefox</option>
+			<option value="Chrome">Chrome</option>
+		</select><br><br>
+
+		<label for="comentario">Comentário</label><br>
+		<textarea name="comentario" id="comentario" rows="10"></textarea><br>
+
+		<input type="submit" name="submit" id="submit">
+	</form>
+
+	<script src="js/06-validacao-de-formulario.js"></script>
+</body>
+</html>

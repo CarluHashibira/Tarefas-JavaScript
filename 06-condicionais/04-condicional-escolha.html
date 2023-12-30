@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Condicional escolha</title>
+</head>
+<body>
+	<h1>Condicional escolha</h1>
+	<p id="teste">Hoje é: </p>
+
+	<script type="text/javascript">
+		var dia = 8;
+		var resp = '';
+		switch(dia){
+			case 1:
+				resp = 'Domingo';
+				break;
+			case 2:
+				resp = 'Segunda';
+				break;
+			case 3:
+				resp = 'Terça';
+				break;
+			case 4:
+				resp = 'Quarta';
+				break;
+			case 5:
+				resp = 'Quinta';
+				break;
+			case 6:
+				resp = 'Sexta';
+				break;
+			case 7:
+				resp = 'Sábado';
+				break;
+			default:
+				alert('Dia da semana não existe!');
+		}
+		document.getElementById('teste').innerHTML += resp;
+	</script>
+</body>
+</html>

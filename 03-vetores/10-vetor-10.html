@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>Exemplo de vetor - pop</h1>
+	<h3>Remove o último elemento do vetor e o retorna como resultado</h3>
+	<p id="teste1">Vetor sem pop: </p>
+	<p id="teste2">Valor do pop: </p>
+	<p id="teste3">Vetor após pop: </p>
+
+	<script type="text/javascript">
+		var vetor = [1,2,3,4,5,6];
+		var resultado1 = vetor;
+
+		document.getElementById('teste1').innerHTML += resultado1;
+
+		var resultado2 = vetor.pop();
+		document.getElementById('teste2').innerHTML += resultado2;
+
+		document.getElementById('teste3').innerHTML += vetor;
+	</script>
+
+</body>
+</html>

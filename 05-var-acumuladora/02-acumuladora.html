@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplo de variável acumuladora</title>
+</head>
+<body>
+	<h1>Exemplo de variável acumuladora</h1>
+	<p id="teste">A soma de todas as idades é: </p>
+
+	<script type="text/javascript">
+		var totFam = parseInt(prompt('Quantas pessoas tem na sua família?',''));
+		var total = 0;
+		var idade = 0;
+		for (var i = 1; i <= totFam; i++) {
+			idade = parseInt(prompt('Digite a idade da ' + i + 'a pessoa',''));
+			total = total + idade;
+		}
+		document.getElementById('teste').innerHTML += total;
+	</script>
+</body>
+</html>
